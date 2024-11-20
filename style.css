@@ -5,7 +5,6 @@ body {
 }
 
 /* General styles for the navigation */
-
 .nav {
   display: flex;
   justify-content: space-between;
@@ -84,7 +83,10 @@ body {
   font-size: 1.5em;
 }
 
-/* Styles for smaller screens */
+/* General Comment: @media are Media Querries. In this case used for 
+Styles for smaller screens */
+
+/*Navigation for mobile with burger and overlay*/
 @media screen and (max-width: 640px) {
   .nav ul {
     display: none;
@@ -117,12 +119,10 @@ body {
     transform: scale(1.1);
   }
 }
+/*End of Navigation for mobile with burger and overlay*/
 
 
-/*--------------------------------*/
-
-/*Styling Classes - Bausteine*/
-
+/*Styling Classes - Components*/
 .button-shape{
   padding: 10px 25px 10px 25px;
   border-top-left-radius: 50px;
@@ -152,12 +152,13 @@ body {
 .font-white{
   color: #EEEEEE;
 }
-.h1{
+h1{
   font-family: "Barlow", serif;
-  font-weight: 700;
+  font-size: 80px;
+  line-height: 70px;
+  font-weight: 800;
   font-style: normal;
   color: #3A5715;
-  z-index: 0;
 }
 
 h2{
@@ -167,6 +168,34 @@ h2{
   color: #EEEEEE;
 }
 
+h3{
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 30px;
+  font-style: normal;
+  color: #BFD67F;
+}
+
+.imgs{
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+/*End of Styling Classes - Components*/
+
+.sections{
+  display: flex;
+  flex-direction: row;
+  padding: 30px 8% 30px 8%;
+}
+.flex1{
+  flex:1;
+}
+
+
+
+
+/*Footer*/
 .footer{
   display: flex;
   flex-direction: row;
@@ -186,9 +215,13 @@ h2{
 .footer-list{
   list-style-type: none;
 }
+
+/*footer for mobile*/
 @media screen and (max-width: 640px) {
   .footer{
     flex-direction:column;
 
   }
 }
+/*End footer for mobile*/
+/*End of footer*/
