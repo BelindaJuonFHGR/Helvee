@@ -117,7 +117,11 @@ body {
     transform: scale(1.1);
   }
 }
-/*Navigation Ende*/
+
+
+/*--------------------------------*/
+
+/*Styling Classes - Bausteine*/
 
 .button-shape{
   padding: 10px 25px 10px 25px;
@@ -147,4 +151,42 @@ body {
 }
 .font-white{
   color: #EEEEEE;
+}
+.h1{
+  font-family: "Barlow", serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #3A5715;
+  z-index: 0;
+}
+
+h2{
+  font-family: "Barlow", serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #EEEEEE;
+}
+
+.footer{
+  display: flex;
+  flex-direction: row;
+  padding: 20px 10% 20px 10%;
+  background-color: #242424;
+  color: #EEEEEE;
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+.footer-flex{
+  flex:4;
+}
+.footer-list{
+  list-style-type: none;
+}
+@media screen and (max-width: 640px) {
+  .footer{
+    flex-direction:column;
+
+  }
 }
