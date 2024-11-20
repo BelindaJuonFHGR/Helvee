@@ -163,9 +163,9 @@ h1{
 
 h2{
   font-family: "Barlow", serif;
-  font-weight: 700;
+  font-weight: 800;
   font-style: normal;
-  color: #EEEEEE;
+  font-size: 50px;
 }
 
 h3{
@@ -183,15 +183,19 @@ h3{
 }
 /*End of Styling Classes - Components*/
 
-.sections{
+.flex-container {
   display: flex;
-  flex-direction: row;
-  padding: 30px 8% 30px 8%;
-}
-.flex1{
-  flex:1;
+  flex-wrap: nowrap;
+
 }
 
+.flex-container1{
+  background-color: #ffffff;
+  width: 100%; 
+}
+.section{
+  padding: 20px 8% 20px 8%;
+}
 
 
 
