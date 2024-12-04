@@ -1,147 +1,304 @@
 <!DOCTYPE html>
-<html>
-    <head></head>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-<!--Navigation-->
-      <nav class="nav">
-        <span class="logo"><img src="img/Logo.png" style="max-width: 150px;"></span>
-        <ul>
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#about">Über uns</a></li>
-          <li><a href="#contact">Unsere Partner</a></li>
-          <li><a href="#login">Kontakt</a></li>
-          <li><a href="#login"><button class="button-shape button-color-light font-dark">myHelvee</button></a></li>
-        </ul>
-        <label for="burger-toggle" class="burger">
-          <div></div>
-          <div></div>
-          <div></div>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Helvee</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="img/Logo.png" />
+      </div>
+
+      <!-- Hidden checkbox for menu toggle -->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+
+      <!-- Menu links -->
+      <div class="menu">
+        <a href="#" class="current">Home</a>
+        <a href="#">Über uns</a>
+        <a href="#">Partner</a>
+        <a href="#">Kontakt</a>
+        <a href="#" class="myhelvee-button">myHelvee</a>
+      </div>
+
+      <label for="menu-toggle" class="burger-menu">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-list"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+          />
+        </svg>
+      </label>
+
+      <!-- Mobile menu overlay -->
+      <div class="mobile-menu-overlay">
+        <!-- Close button (styled as label) -->
+        <label for="menu-toggle" class="close-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-x-circle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+            />
+            <path
+              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
+            />
+          </svg>
         </label>
-      </nav>
-      
-<!-- Full-Screen Nav Overlay -->
-      <input type="checkbox" id="burger-toggle">
-      <div class="overlay">
-        <label for="burger-toggle" class="close-button">X</label>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#login">Login</a></li>
-        </ul>
+        <a href="#" class="current">Home</a>
+        <a href="#">Über uns</a>
+        <a href="#">Partner</a>
+        <a href="#">Kontakt</a>
+        <a href="#" class="myhelvee-button">myHelvee</a>
       </div>
-<!--End Full Screen Nav Overlay-->
-<!--End Navigation-->
-
-      <div style="height: 600px;" class="section headerbg">
-        <div>
-          <h1 class="font-dark" style="padding-top: 5rem;">Willkommen <br> bei Helvee</h1>
-          <h3 class="font-light">Mehr vom Leben - <br> mehr im Portemonnaie</h4>
+    </nav>
+    <!-- Header Section -->
+    <header class="header-section">
+      <div class="header-content">
+        <h1>Willkommen bei Helvee!</h1>
+        <p>
+          Mehr vom Leben - <br />
+          mehr im Portemonnaie.
+        </p>
+        <a href="#" class="primary-button">Helvee herunterladen</a>
+      </div>
+    </header>
+    <!-- Sections -->
+    <section class="section white">
+      <div class="column">
+        <img
+          src="./img/happy-woman-glasses-makes-winning-gesture-sincerely-rejoices-lady-with-red-lipstick-dressed-gray-sweater-looking-laptop.jpg"
+        />
+      </div>
+      <div class="column">
+        <h2>Was ist Helvee?</h2>
+        <h3>Gesünder leben und Prämien sparen</h3>
+        <p>
+          Die Helvee-App belohnt dich für eine gesunde Ernährung. Sammle
+          Helvee-Punkte durch den Kauf gesunder Lebensmittel und reduziere damit
+          deine Krankenkassenprämien. Unsere Mission: Gesundheit fördern und
+          Kosten senken - für eine gesündere Schweiz.
+        </p>
+        <a href="#" class="primary-button">Zur Gründergeschichte</a>
+      </div>
+    </section>
+    <section class="section green">
+      <div class="column">
+        <h2>Wie funktionierts?</h2>
+        <h3>Kaufen - Scannen - profitieren</h3>
+        <p>
+          Mit der Helvee-App scannst du die Kassenbons deiner Einkäufe. Gesunde
+          Lebensmittel werden automatisch erkannt und mit Punkten - den
+          „Helvees“ - belohnt. Diese Punkte kannst du sammeln und bei
+          teilnehmenden Krankenkassen gegen Prämienrabatte einlösen. So sparst
+          du Geld, indem du dich gesund ernährst! Dabei spielt es keine Rolle,
+          in welchem Laden du einkaufst.
+        </p>
+        <a href="#" class="primary-button">Zu den Partner-Krankenkassen</a>
+        <div class="icon-container">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-google-play"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M14.222 9.374c1.037-.61 1.037-2.137 0-2.748L11.528 5.04 8.32 8l3.207 2.96zm-3.595 2.116L7.583 8.68 1.03 14.73c.201 1.029 1.36 1.61 2.303 1.055zM1 13.396V2.603L6.846 8zM1.03 1.27l6.553 6.05 3.044-2.81L3.333.215C2.39-.341 1.231.24 1.03 1.27"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-apple"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516s1.52.087 2.475-1.258.762-2.391.728-2.43m3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422s1.675-2.789 1.698-2.854-.597-.79-1.254-1.157a3.7 3.7 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56s.625 1.924 1.273 2.796c.576.984 1.34 1.667 1.659 1.899s1.219.386 1.843.067c.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758q.52-1.185.473-1.282"
+            />
+            <path
+              d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516s1.52.087 2.475-1.258.762-2.391.728-2.43m3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422s1.675-2.789 1.698-2.854-.597-.79-1.254-1.157a3.7 3.7 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56s.625 1.924 1.273 2.796c.576.984 1.34 1.667 1.659 1.899s1.219.386 1.843.067c.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758q.52-1.185.473-1.282"
+            />
+          </svg>
         </div>
       </div>
-
-      <div class="section" style="padding-top: 50px; padding-bottom: 50px; z-index: -2;">
-      <div class="flex-container">
-        <div class="flex-container1"><img class="imgs" src="img/happy-woman-glasses-makes-winning-gesture-sincerely-rejoices-lady-with-red-lipstick-dressed-gray-sweater-looking-laptop.jpg" width="100%"></div>
-        <div class="flex-container1" style="margin-left: 50px;">
-          <h2 class="font-dark">Was ist Helvee?</h2>
-          <h3>Gesünder leben <br> und Prämien sparen</h3>
-          <p>Die Helvee-App belohnt dich für eine gesunde Ernährung. <br> Sammle Helvee-Punkte durch den Kauf gesunder Lebensmittel <br> und reduziere damit deine Krankenkassenprämien. <br> Unsere Mission: Gesundheit fördern und Kosten senken <br>– für eine gesündere Schweiz.</p>
-          <button class="button-shape button-color-dark font-light">Zur Gründergeschichte</button>
-        </div>
+      <div class="column">
+        <video class="responsive-video" controls>
+          <source src="mov_bbb.mp4" type="video/mp4" />
+          Your browser does not support HTML video.
+        </video>
       </div>
-    </div>
-
-    <div class="section" style="background-color: #3a5715; padding-top: 50px; padding-bottom: 50px;">
-      <div class="flex-container">
-        <div class="flex-container1">
-          <h2 class="font-light">Wie funktionierts?</h2>
-          <h3 class="font-white">Kaufen - Scannen - profitieren</h3>
-          <p class="font-white">Mit der Helvee-App scannst du die Kassenbons deiner Einkäufe. Gesunde Lebensmittel werden automatisch erkannt und mit Punkten – den „Helvees“ – belohnt. Diese Punkte kannst du sammeln und bei teilnehmenden Krankenkassen gegen Prämienrabatte einlösen. So sparst du Geld, indem du dich gesund ernährst! Dabei spielt es keine Rolle, in welchem Laden du einkaufst.</p>
-          <button class="button-shape button-color-light font-dark">Zu den Partner-Krankenkassen</button>
-           <img style="max-height: 50px" src="img/jam_google-play-square.png">
-           <img style="max-height: 50px" src="img/mingcute_appstore-line.png">
-        </div>
-        <div class="flex-container1" style="margin-left: 50px;">
-          <video width="100%" controls>
-            <source src="mov_bbb.mp4" type="video/mp4">
-            Your browser does not support HTML video.
-          </video>
-        </div>
+    </section>
+    <section class="section white">
+      <div class="column">
+        <img
+          src="./img/happy-woman-glasses-makes-winning-gesture-sincerely-rejoices-lady-with-red-lipstick-dressed-gray-sweater-looking-laptop.jpg"
+        />
       </div>
-    </div>
-
-    <div class="section" style="background-color: white; padding-top: 50px; padding-bottom: 50px;">
-      <div class="flex-container">
-        <div class="flex-container1"><img class="imgs" src="img/happy-woman-glasses-makes-winning-gesture-sincerely-rejoices-lady-with-red-lipstick-dressed-gray-sweater-looking-laptop.jpg" width="100%"></div>
-        <div class="flex-container1" style="margin-left: 50px;">
-          <h2 class="font-dark">Deine Vorteile <br> mit Helvee</h2>
-          <h3>Finde heraus, was dir Helvee alles bietet.</h3>
-          <p>Mit Helvee profitierst du doppelt: Du förderst deine Gesundheit durch bewusste Ernährung und sparst dabei Geld. Sammle Punkte für gesunde Einkäufe und reduziere damit deine Krankenkassenprämien. Die intuitive App macht es dir leicht, gesund zu leben und gleichzeitig deinen Alltag kostengünstiger zu gestalten.</p>
-          <button class="button-shape button-color-dark font-light">Über uns</button>
-        </div>
+      <div class="column">
+        <h2>Deine Vorteile mit Helvee</h2>
+        <h3>Finde heraus, was dir Helvee alles bietet.</h3>
+        <p>
+          Mit Helvee profitierst du doppelt: Du förderst deine Gesundheit durch
+          bewusste Ernährung und sparst dabei Geld. Sammle Punkte für gesunde
+          Einkäufe und reduziere damit deine Krankenkassenprämien. Die intuitive
+          App macht es dir leicht, gesund zu leben und gleichzeitig deinen
+          Alltag kostengünstiger zu gestalten.
+        </p>
+        <a href="#" class="primary-button">Über uns</a>
       </div>
-    </div>
-
-    <div class="section" style="align-items: center; background-color: #3a5715; padding-top: 20px; padding-bottom: 20px;">
-      <div class="flex-container">
-        <div><h3 class="font-white">Gesammelte Helvees</h3></div>
-        <div><h2 class="font-light">1’360’354</h2></div>
-        <div><h3 class="font-white">Gesparte Prämien</h3></div>
-        <div><h2 class="font-light">13’603.45</h2></div>
+    </section>
+    <section class="section green">
+      <div class="column">
+        <h3>Gesammlelte Helvees</h3>
+        <h1>1'360'354</h1>
       </div>
-    </div>
-
-    <div class="section" style="background-color: white; padding-top: 50px; padding-bottom: 50px;">
-      <div class="flex-container">
-        <div class="flex-container1">
-          <h2 class="font-dark">Warum gesund ernähren?</h2>
-          <h3>Gesund essen - besser leben</h3>
-          <p>Eine gesunde Ernährung ist der Schlüssel zu mehr Energie, Wohlbefinden und einem starken Immunsystem. Sie hilft nicht nur, Krankheiten vorzubeugen, sondern steigert auch deine Lebensqualität. Mit Helvee möchten wir gesunde Entscheidungen im Alltag einfacher und zugänglicher machen – weil dein Körper und deine Gesundheit es wert sind.</p>
-          <button class="button-shape button-color-dark font-light">Mehr zu gesunder Ernährung</button>
-        </div>
-        <div class="flex-container1"><img class="imgs"  style="margin-left: 50px;" src="img/happy-woman-glasses-makes-winning-gesture-sincerely-rejoices-lady-with-red-lipstick-dressed-gray-sweater-looking-laptop.jpg" width="100%"></div>
+      <div class="column">
+        <h3>Gesparte Prämien</h3>
+        <h1>13'603.45</h1>
       </div>
-    </div>
-<!--footer-->
-      <footer class="footer">
-        <div class="footer-flex"><img src="img/Logo.png" width="150px"></div>
-        <div class="footer-flex">
-         <ul class="footer-list"> 
-          <h4 class="font-light">Navigation</h4>
-          <li>Helvees</li>
-          <li>Partner</li>
-          <li>Über Unser</li>
-          <li>Kontakt</li>
-          <li>MyHelvee</li>
-        </ul>
+    </section>
+    <section class="section white">
+      <div class="column">
+        <h2>Warum gesund ernähren?</h2>
+        <h3>Gesund essen - besser leben</h3>
+        <p>
+          Eine gesunde Ernährung ist der Schlüssel zu mehr Energie, Wohlbefinden
+          und einem starken Immunsystem. Sie hilft nicht nur, Krankheiten
+          vorzubeugen, sondern steigert auch deine Lebensqualität. Mit Helvee
+          möchten wir gesunde Entscheidungen im Alltag einfacher und
+          zugänglicher machen - weil dein Körper und deine Gesundheit es wert
+          sind.
+        </p>
+        <a href="#" class="primary-button">Mehr zu gesunder Ernährung</a>
+      </div>
+      <div class="column">
+        <img
+          src="./img/happy-woman-glasses-makes-winning-gesture-sincerely-rejoices-lady-with-red-lipstick-dressed-gray-sweater-looking-laptop.jpg"
+        />
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-column">
+          <div class="logo">
+            <img src="img/Logo.png" />
+          </div>
         </div>
-        <div class="footer-flex">
-          <ul class="footer-list"> 
-            <h4 class="font-light">Kontakt</h4>
-            <li><strong>Helvee GmbH</strong></li>
-            <li>Limmatstrasse 21</li>
-            <li>8005 Zürich</li>
-            <li><br></li>
-            <li>+41 23 456 78 91</li>
-            <li>info@helvee.ch</li>
+        <div class="footer-column navigation-column">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#helvee">Helvee</a></li>
+            <li><a href="#partner">Partner</a></li>
+            <li><a href="#about">Über uns</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+            <li><a href="#myhelvee">MyHelvee</a></li>
           </ul>
         </div>
-        <div class="footer-flex">
-          <ul>
-           <h4 class="font-light">Social Media</h4>
-          <img src="img/Linkedin.png">
-          <img src="img/instagram.png">
-          <img src="img/Tiktok.png">
-          <img src="img/facebook.png">
-        </ul>
+        <div class="footer-column contact-column">
+          <h4>Kontakt</h4>
+          <address>
+            Helvee GmbH<br />
+            Limmatstrasse 21<br />
+            8005 Zürich
+          </address>
         </div>
-      </footer>
-    </body>
+        <div class="footer-column social-media-column">
+          <h4>Social Media</h4>
+          <div class="social-icons">
+            <a href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-linkedin"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+                />
+              </svg>
+            </a>
+            <a href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-instagram"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+                />
+              </svg>
+            </a>
+            <a href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-facebook"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
+                />
+              </svg>
+            </a>
+            <a href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-tiktok"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <a href="#impressum">Impressum</a> |
+        <a href="#datenschutz">Datenschutz</a>
+      </div>
+    </footer>
+  </body>
 </html>
