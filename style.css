@@ -473,3 +473,36 @@ p {
     margin: 1rem 0; /* Add spacing around the icons */
   }
 }
+.team {
+  display: grid; /* Switch to CSS Grid */
+  grid-template-columns: 1fr 1fr 1fr; /* Default: Three equal columns */
+  gap: 2rem; /* Space between rows and columns */
+  padding: 2rem; 
+  max-width: 100%; /* Prevent section from exceeding body width */
+  overflow: hidden; /* Prevent horizontal overflow */
+}
+
+/* Single-column layout for mobile */
+@media (max-width: 768px) {
+  .team {
+    grid-template-columns: 1fr; /* Single-column layout for smaller screens */
+    padding: 1rem; /* Adjust padding slightly for mobile */
+    gap: 1rem;
+  }
+}
+
+.team .column {
+  padding: 1rem; /* Maintain padding */
+  word-wrap: break-word; /* Prevent overflow */
+  box-sizing: border-box; /* Ensure padding does not add to width */
+  overflow: hidden; /* Prevent content from causing overflow */
+}
+
+.team img {
+  width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image covers the area */
+  max-width: none; /* Prevent max-width constraints */
+  border-top-left-radius: 10rem; /* Top-left rounded corner */
+  border-bottom-right-radius: 10rem; /* Bottom-right rounded corner */
+}
