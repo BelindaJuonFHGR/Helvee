@@ -511,15 +511,17 @@ p {
   }
 }
 
+
+
 /*linke Section der Seite*/
 .header-section-login {
 position: relative; /* Element bleibt in normalen Dokumentenfluss*/
 transform: translateX(-5vw); /* Verschiebt die Bubble horizontal über linken Rand um 5% des Viewports*/
 height: 80vh; /* Höhe um 80% des Viewports (sichtbarer Bereich des Browsers)*/
-background: url("./img/Header-Bubble.png") no-repeat left;
+background: url("./img/Login\ Bubble.svg") no-repeat left;
 background-size: contain; /*Bubble wird so gross gemacht wies geht, ohne Container zu überschreiten*/
 background-position: left center;
-align-items: center;
+align-items: flex-start;
 padding: 0 5vw;
 color: var(--black);
 text-align: left; 
@@ -531,15 +533,16 @@ max-width: none;
 
 @media (max-width: 768px) {
   .header-section-login {
-    height: 100vh; /* Vollständige Höhe des Viewports */
     width: 100vw; /* Vollständige Breite des Viewports */
     margin-left: 0; /* Entfernt die negative Verschiebung */
-    padding: 0; /* Entfernt Polsterungen */
+    padding-left: 7rem; /* Entfernt Polsterungen */
     background-size: contain; /* Passt das Bild an, ohne abgeschnitten zu werden */
     background-position: left top; /* Positioniert die Bubble oben links */
     background-repeat: no-repeat; /* Verhindert, dass das Bild wiederholt wird */
     justify-content: center;
-    text-align: center;
+    text-align: left;
+    height: auto; /* Adjust height for content */
+    background: var(--light-gray);
   }
 
   body {
