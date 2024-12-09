@@ -498,12 +498,17 @@
         
       }
 
-      .form-group input:focus,
+.form-group input:focus,
 .form-group textarea:focus {
   background-color: #d9f9c2; /* Beibehalten des Hellgrüns */
   border-color: var(--olive); /* Fokusrand */
   outline: none;
   
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--olive); /* Auch die Platzhalter in olivegrün */
 }
 
 .contact-form {
