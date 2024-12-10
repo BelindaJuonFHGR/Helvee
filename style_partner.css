@@ -1,0 +1,741 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Define CSS Variables */
+  :root {
+    --olive: #3a5715;
+    --lime: #bfd67f;
+    --black: #242424;
+    --gray: #bebebe;
+    --light-gray: #eeeeee;
+    --white: white;
+  
+    --font-size-h1: 4rem;
+    --font-size-h2: 3rem;
+    --font-size-h3: 2rem;
+    --font-size-body: 1.4rem;
+  
+    /* Line Heights */
+    --line-height-base: 1.6;
+    --line-height-heading: 1.3;
+  }
+  
+  @media (max-width: 768px) {
+    :root {
+      --font-size-h1: 3rem;
+      --font-size-h2: 1.75rem;
+      --font-size-h3: 1.25rem;
+      --font-size-body: 0.9rem;
+    }
+  }
+  
+  /* Body Styles */
+  body {
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 500;
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-base);
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Barlow", sans-serif;
+    font-weight: 800;
+  }
+  
+  h1 {
+    font-size: var(--font-size-h1);
+    line-height: var(--line-height-heading);
+    margin-bottom: 1rem;
+    color: var(--olive);
+  }
+  
+  h2,
+  h3 {
+    margin-bottom: 1rem;
+  }
+  
+  h2 {
+    font-size: var(--font-size-h2);
+    line-height: var(--line-height-heading);
+  }
+  
+  h3 {
+    font-size: var(--font-size-h3);
+    font-weight: 700;
+  }
+  
+  p {
+    font-size: var(--font-size-body);
+    margin-bottom: 2rem;
+  }
+  
+  /* Navbar */
+  .navbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white);
+    color: var(--light-gray);
+    padding: 1rem 3rem;
+    z-index: 1000;
+  }
+  
+  .logo img {
+    max-width: clamp(100px, 10vw, 150px);
+    height: auto;
+  }
+  
+  .navbar .menu {
+    display: flex;
+    align-items: center; /* Vertically centers items */
+    gap: 2rem; /* Adjust spacing between menu items */
+  }
+  
+  .navbar .menu a {
+    color: var(--black);
+    text-decoration: none;
+  }
+  
+  .navbar .menu a.current {
+    font-weight: 700;
+  }
+  
+  .navbar .menu a:last-of-type {
+    margin-left: 7rem; /* Add extra space before the myhelvee-button */
+  }
+  
+  /* Burger Menu */
+  .burger-menu {
+    display: none; /* Hide burger menu by default */
+    color: var(--black);
+  }
+  
+  @media (max-width: 768px) {
+    .navbar .menu {
+      display: none;
+    }
+  
+    .burger-menu {
+      display: block;
+    }
+  
+    .mobile-menu-overlay {
+      display: flex;
+    }
+  }
+  
+  .myhelvee-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-top-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    background-color: var(--lime);
+    box-shadow: 0.2rem 0.2rem 0.5rem var(--gray);
+    color: var(--olive) !important;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .myhelvee-button:hover {
+    background-color: var(--olive);
+    color: var(--lime) !important;
+    transform: translateY(-0.2rem);
+  }
+  
+  /* Hide the checkbox used to toggle the menu */
+  .menu-toggle {
+    display: none;
+  }
+  
+  /* Mobile Menu Overlay */
+  .mobile-menu-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    color: var(--light-gray);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 2000;
+    opacity: 0; /* Add transition effect */
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Display the overlay when the checkbox is checked */
+  .menu-toggle:checked ~ .mobile-menu-overlay {
+    display: flex;
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  /* Close Button */
+  .close-button {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    background: none;
+    color: var(--light-gray);
+    border: none;
+    cursor: pointer;
+  }
+  
+  .mobile-menu-overlay a {
+    color: var(--light-gray);
+    text-decoration: none;
+    font-size: 1.25rem;
+  }
+  
+  /* Header Section */
+  .header-section {
+    position: relative;
+    height: 60vh;
+    background: url("./img/headerBG.png") no-repeat center;
+    background-size: cover; /* Ensure it covers the area */
+    display: flex;
+    align-items: center;
+    padding: 0 5vw;
+    color: var(--black);
+  }
+  
+  .header-content {
+    max-width: 25vw; /* Max width of the content */
+  }
+  
+  .header-content p {
+    font-size: var(--font-size-h3);
+    margin-bottom: 2rem;
+    color: var(--black);
+  }
+  
+  /* Responsive Header for Mobile */
+  @media (max-width: 768px) {
+    .header-section {
+      height: auto; /* Adjust height for content */
+      padding: 2rem;
+      background: var(--light-gray);
+    }
+  
+    .header-content {
+      text-align: left; /* Left-align text */
+      margin: 0;
+      max-width: none;
+    }
+  
+    h1 {
+      margin-bottom: 0.5rem;
+    }
+  
+    .header-content p {
+      font-size: var(--font-size-h2);
+    }
+  
+    .header-section .primary-button {
+      margin-bottom: 0;
+    }
+  }
+  
+  .primary-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-top-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    background-color: var(--olive);
+    box-shadow: 0.2rem 0.2rem 0.5rem var(--gray);
+    color: var(--light-gray);
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .primary-button:hover {
+    background-color: var(--lime);
+    color: var(--olive);
+    transform: translateY(-0.2rem);
+  }
+  
+  /* Sections */
+  .section {
+    display: grid; /* Switch to CSS Grid */
+    grid-template-columns: 1fr 1fr; /* Default: Two equal columns */
+    gap: 2rem; /* Space between rows and columns */
+    padding: 2rem; 
+    max-width: 100%; /* Prevent section from exceeding body width */
+    overflow: hidden; /* Prevent horizontal overflow */
+  }
+  
+  /* Single-column layout for mobile */
+  @media (max-width: 768px) {
+    .section {
+      grid-template-columns: 1fr; /* Single-column layout for smaller screens */
+      padding: 1rem; /* Adjust padding slightly for mobile */
+      gap: 1rem;
+    }
+  }
+  
+  .section .column {
+    padding: 1rem; /* Maintain padding */
+    word-wrap: break-word; /* Prevent overflow */
+    box-sizing: border-box; /* Ensure padding does not add to width */
+    overflow: hidden; /* Prevent content from causing overflow */
+  }
+  
+  .section.white {
+    background: var(--white);
+  }
+  
+  .section.green {
+    background: var(--olive);
+    color: var(--light-gray);
+  }
+  
+  /* Section-specific styles */
+  /* White section */
+  .section.white h2 {
+    color: var(--olive);
+  }
+  
+  .section.white h3 {
+    color: var(--black);
+  }
+  
+  .section.white p {
+    color: var(--black);
+    padding-right: 2rem;
+  }
+  
+  /* Green section */
+  .section.green h2 {
+    color: var(--white);
+  }
+  
+  .section.green h3 {
+    color: var(--white);
+  }
+  
+  .section.green p {
+    color: var(--white);
+  }
+  
+  .section.green .primary-button {
+    background-color: var(--lime);
+    color: var(--olive);
+  }
+  
+  .section.green .primary-button:hover {
+    background-color: var(--olive);
+    color: var(--lime);
+  }
+  
+  .section.green h1 {
+    color: var(--lime);
+  }
+  
+  /* General styles for images */
+  .section img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the area */
+    max-width: none; /* Prevent max-width constraints */
+    border-top-left-radius: 30rem; /* Top-left rounded corner */
+    border-bottom-right-radius: 30rem; /* Bottom-right rounded corner */
+  }
+  
+  /* Mobile: Remove cut-off effect */
+  @media (max-width: 768px) {
+    .image-left,
+    .image-right {
+      width: 100%; /* Constrain image to container width */
+      margin: 0; /* Remove negative margins */
+      border-radius: 0; /* Remove rounded corners */
+    }
+  }
+  
+  .section .icon-container {
+    display: flex;
+    gap: 1rem; /* Space between the icons */
+    margin-top: 1rem; /* Add spacing above the icons */
+    justify-content: flex-start; /* Align icons to the left */
+  }
+  
+  /* Responsive size for the icons */
+  .section .icon-container svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: var(--white);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .section .icon-container svg:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+    fill: var(--lime); /* Change color on hover */
+  }
+  
+  /* Footer Styles */
+  .footer {
+    background: var(--black);
+    color: var(--light-gray);
+    padding: 2rem 4rem;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  .footer-column {
+    flex: 1;
+    min-width: 15rem;
+  }
+  
+  .navigation-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .navigation-column ul li {
+    margin-bottom: 1rem;
+  }
+  
+  .navigation-column ul li a {
+    color: var(--light-gray);
+    text-decoration: none;
+  }
+  
+  .contact-column address {
+    font-style: normal;
+  }
+  
+  .social-media-column .social-icons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .social-media-column .social-icons a {
+    color: var(--light-gray);
+    text-decoration: none;
+    background: var(--lime);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+  }
+  
+  .responsive-video {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.875rem;
+  }
+  
+  .footer-bottom a {
+    color: var(--light-gray);
+    text-decoration: none;
+  }
+  
+  /* Responsive Footer */
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .social-media-column .social-icons {
+      justify-content: center; /* Ensure icons are centered horizontally */
+      margin: 1rem 0; /* Add spacing around the icons */
+    }
+  }
+  
+  
+  
+  /*myHelvee Login*/
+  
+  /*ganze Seite Desktop-Ansicht*/
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .page-container {
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 40px;
+    overflow: visible;
+  }
+  
+  /*ganze Seite Mobile Ansicht (unter 768px Breite)*/
+  @media (max-width: 768px) {
+    .page-container {
+        flex-direction: column; /* Spaltenlayout */
+        align-items: center; /* Zentriert die Inhalte */
+    }
+  
+    .header-section, .container_grau {
+        width: 100%; /* Beide Spalten nehmen die volle Breite ein */
+        max-width: none; /* Entfernt eventuelle maximale Breiten */
+    }
+  
+    .container_grau {
+        margin-top: 20px; /* Abstand zwischen den beiden Bereichen */
+    }
+  }
+  
+  
+  
+  /*linke Section der Seite*/
+  .header-section-login {
+  position: relative; /* Element bleibt in normalen Dokumentenfluss*/
+  transform: translateX(-5vw); /* Verschiebt die Bubble horizontal über linken Rand um 5% des Viewports*/
+  height: 80vh; /* Höhe um 80% des Viewports (sichtbarer Bereich des Browsers)*/
+  background: url("./img/Login\ Bubble.svg") no-repeat left;
+  background-size: contain; /*Bubble wird so gross gemacht wies geht, ohne Container zu überschreiten*/
+  background-position: left center;
+  align-items: flex-start;
+  padding: 0 5vw;
+  color: var(--black);
+  text-align: left; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: none;
+  }
+  
+  @media (max-width: 768px) {
+    .header-section-login {
+      width: 100vw; /* Vollständige Breite des Viewports */
+      margin-left: 0; /* Entfernt die negative Verschiebung */
+      padding-left: 7rem; /* Entfernt Polsterungen */
+      background-size: contain; /* Passt das Bild an, ohne abgeschnitten zu werden */
+      background-position: left top; /* Positioniert die Bubble oben links */
+      background-repeat: no-repeat; /* Verhindert, dass das Bild wiederholt wird */
+      justify-content: center;
+      text-align: left;
+      height: auto; /* Adjust height for content */
+      background: var(--light-gray);
+    }
+  
+    body {
+      overflow-x: hidden; /* Verhindert horizontales Scrollen */
+    }
+  }
+  
+  .header-content-login {
+  max-width: 60%; /* Maximale Breite des Inhalts*/
+  z-index: 1; /* Damit der Text immer sichtbar bleibt */
+  }
+  
+  /*Rechte Section der Seite -> gesamter grauer Container*/
+  .container_grau{ 
+    background-color: #eeeeee;
+    padding: 40px;
+    border-radius: 25px;
+    max-width: 100%; 
+    width: 100%; /*stellt sicher, dass die Breite dynamisch bleibt*/
+  }
+  
+  
+  h2 { /*Titel: Login*/
+    color: #334d26;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+  
+  .Eingabefeld {
+    width: 100%;
+    height: 4rem;
+    padding: 0.8rem 2rem;
+    border-radius: 35px;
+    margin-bottom: 2rem;
+    background-color: #bfd67f;
+    font-family: "Comfortaa", sans-serif;
+    font-size: 1.4rem;
+    border: none;
+  }
+  
+  .Eingabefeld::-webkit-input-placeholder { /* Placeholder da sonst Schriftfarbe grau ist und webkit für Chrome, Safari */
+    color: #334d26;
+  }
+  
+  .login-form input:focus{
+    outline: none;/*Damit kein blauer Rahmen angezeigt wird beim anklicken*/
+  }
+  
+  .button-login-container { /*weil erste Section, wo zwei Buttons nebeneinander sind*/
+    display: flex;
+    gap: 10px; /*Abstand zwischen den Buttons*/
+  }
+  
+  .button-login {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-top-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    background-color: var(--olive);
+    box-shadow: 0.2rem 0.2rem 0.5rem var(--gray);
+    color: var(--light-gray);
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  
+  .button-login:hover {
+    background-color: var(--lime);
+    color: var(--olive);
+    transform: translateY(-0.2rem);
+  }
+  
+  .checkbox-container { /*Checkbox UND Text: Angemeldet bleiben*/
+    display: flex;
+    align-items: center; /*zentriert Checkbox und Text vertikal*/
+    gap: 8px; /* Abstand zwischen Checkbox und Text */
+    font-size: 16px;
+    line-height: 1;
+  }
+  
+  .checkbox { /*Nur Checkbox Angemeldet bleiben*/
+    appearance: none; /*entfernt Standart Styling*/
+    width: 30px;
+    height: 20px;
+    border: 2px solid var(--olive); /* Rahmenfarbe */
+    border-top-left-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+    background-color: #fff; /* Hintergrundfarbe */
+    position: relative;
+    cursor: pointer;
+    font-size: 2rem;
+    
+  }
+  
+  .checkbox:checked {
+    background-color: var(--olive); /* Farbe bei Aktivierung */
+  }
+  
+  .checkbox:checked::before {
+    content: '✔';
+    position: absolute; /*Haken wird innerhalb Checkbox frei positioniert*/
+    top: 50%; 
+    left: 50%; /*top und left positionieren die obere linke Ecke des Hakens in die Mitte der Checkbox.*/
+    transform: translate(-50%, -50%); /*der Haken wird in der Mitte der Checkbox positioniert, unabhängig von der Grösse der Checkbox*/
+    font-size: 14px;
+    color: white; /* Hakenfarbe */
+  }
+  
+  /*Ende MyHelvee_Login*/
+  .team {
+    display: grid; /* Switch to CSS Grid */
+    grid-template-columns: 1fr 1fr 1fr; /* Default: Three equal columns */
+    gap: 2rem; /* Space between rows and columns */
+    padding: 2rem; 
+    max-width: 100%; /* Prevent section from exceeding body width */
+    overflow: hidden; /* Prevent horizontal overflow */
+  }
+  
+  /* Single-column layout for mobile */
+  @media (max-width: 768px) {
+    .team {
+      grid-template-columns: 1fr; /* Single-column layout for smaller screens */
+      padding: 1rem; /* Adjust padding slightly for mobile */
+      gap: 1rem;
+    }
+  }
+  
+  .team .column {
+    padding: 1rem; /* Maintain padding */
+    word-wrap: break-word; /* Prevent overflow */
+    box-sizing: border-box; /* Ensure padding does not add to width */
+    overflow: hidden; /* Prevent content from causing overflow */
+  }
+  
+  .team img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the area */
+    max-width: none; /* Prevent max-width constraints */
+    border-top-left-radius: 10rem; /* Top-left rounded corner */
+    border-bottom-right-radius: 10rem; /* Bottom-right rounded corner */
+  }
+  
+  /* Styling Partner (Aarti) */
+
+/* Styling für die Partner-Green Section */
+.partner-green {
+    background: var(--olive); /* Hintergrundfarbe */
+    padding: 3rem 0; /* Abstand oben und unten */
+}
+
+/* Styling für den Titel innerhalb der Partner-Green Section */
+.partner-green h2 {
+    color: white; /* Schriftfarbe */
+    font-size: 3rem; /* Schriftgröße */
+    padding-left: 2rem;
+    padding-bottom: 1rem;/* ich verstehe nicht warum hier padding 1 rem und nicht grösser damit der abstand gleich ist wie nach oben aber ist einfach so*/
+}
+
+.partner-green .logos {
+    display: flex; /* Flexbox für horizontale Anordnung */
+    justify-content: space-evenly; /* Gleicher Abstand zwischen den Logos */
+    gap: 2rem; /* Abstand zwischen den Bildern */
+}
+
+.partner-green .logos img {
+    max-height: 80px; /* Maximale Höhe */
+    object-fit: contain; /* Logos skalieren ohne Verzerrung */
+    width: auto; /* Breite automatisch */
+}
+
+/* Responsive Layout for Mobile */
+@media (max-width: 768px) {
+    .partner-green h2 {
+        font-size: 2rem; /* Kleinere Schriftgröße für mobile Geräte */
+        padding-left: 1rem; /* Weniger Abstand links */
+        text-align: center; /* Zentrierter Text für Mobilgeräte */
+    }
+
+    .partner-green .logos {
+        flex-wrap: wrap; /* Zeilenumbruch für Logos */
+        justify-content: center; /* Zentriere Logos horizontal */
+        gap: 1rem; /* Reduziere den Abstand zwischen den Logos */
+        padding: 1rem; /* Innenabstand für Mobilgeräte */
+    }
+
+    .partner-green .logos img {
+        max-height: 60px; /* Reduzierte Höhe für Logos auf kleineren Bildschirmen */
+        margin: 0 auto; /* Zentriere die Logos */
+    }
+}
+
+
