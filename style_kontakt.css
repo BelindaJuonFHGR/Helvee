@@ -520,15 +520,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr; /* Zwei Spalten */
     gap: 1rem; /* Abstand zwischen den Spalten */
-    
   }
   
   .form-group {
     display: flex;
     flex-direction: column;
     padding: 0 2rem;
-    
-    
   }
 
 
@@ -545,11 +542,10 @@
   
   a {
     color: var(--olive); /* Ersetzt Verlinkung im Text Blau durch Grün */
-
   }
   
   a:hover {
-    color: var(--olive); /* Farbe von Schrift bei Hover */
+    color: var(--white); /* Farbe von Schrift bei Hover */
   }
 
   details {
@@ -591,7 +587,6 @@
   details[open] summary {
     background-color: var(--olive);
     color: var(--lime);
-    
   }
   
 
