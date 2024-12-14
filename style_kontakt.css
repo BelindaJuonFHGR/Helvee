@@ -482,7 +482,7 @@
       h2 {       
         color: var(--olive);
         padding-top: 2rem; 
-        padding-bottom: 1rem; /* ERSCHEINT GRÖSSER ALS 1REM, WIESO */
+        padding-bottom: 1rem; 
         padding-left: 2rem;
       }
 
