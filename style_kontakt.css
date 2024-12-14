@@ -479,12 +479,14 @@
     /* STYLE FOR CONTACT */
       /* STYLE FOR CONTACT */
 
-      h2 {       
+      .h2_kontakt {       
         color: var(--olive);
         padding-top: 2rem; 
         padding-bottom: 1rem; 
         padding-left: 2rem;
       }
+        
+
 
       .form-group input,
       .form-group textarea {
@@ -495,6 +497,8 @@
         border-radius: 0.5rem;
         font-size: var(--font-size-body);
         transition: border-color 0.3s ease, background-color 0.3s ease;
+        font-family: "Comfortaa", sans-serif;
+        font-size: 1.4rem;
         
       }
 
@@ -514,6 +518,7 @@
 .contact-form {
     display: grid;
     gap: 1.5rem; /* Abstand zwischen den Zeilen */
+    margin-top: 2rem; 
   }
   
   .form-row {
@@ -537,7 +542,8 @@
 /* Die häufigsten Fragen und Antworten im Accordion */
 .faq-section {
     padding: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem; 
   }
   
   a {
@@ -623,4 +629,53 @@
   
   summary::-webkit-details-marker {
     display: none; /* Entfernt den Marker in WebKit-Browsern wie Chrome, Safari */
+  }
+
+  @media (max-width: 768px) {
+
+    
+    .contact-form {
+      display: flex;
+      flex-direction: column; /* Stapelt die Felder vertikal */
+      gap: 1rem; /* Abstand zwischen den Feldern */
+      padding: 1rem; /* Polsterung innerhalb des Formulars */
+      margin-top: 0.5rem;
+    }
+
+    .faq-section {
+      padding: 1rem;
+      margin-bottom: 2rem;
+      margin-top: -0.5rem; 
+    }
+
+    .form-row {
+      display: flex;
+      flex-direction: column; /* Felder übereinander anordnen */
+      gap: 1rem; /* Abstand zwischen den Feldern */
+    }
+  
+    .form-group input,
+    .form-group textarea {
+      width: 100%; /* Breite der Eingabefelder auf 100% */
+      font-size: 1rem; /* Kleinere Schriftgröße für Mobilgeräte */
+    }
+  
+    .primary-button {
+      align-self: center; /* Button zentrieren */
+      width: 100%; /* Breite des Buttons auf die Felder abstimmen */
+      padding: 0.8rem 1.5rem; /* Optimiertes Padding für kleinere Geräte */
+      display: block; /* Ermöglicht Zentrierung */
+      margin: 1rem auto; /* Zentriert den Button horizontal */
+      padding: 0.5rem 1rem; /* Verkleinert die Innenabstände */
+      max-width: 150px; /* Verkleinert die Breite des Buttons */
+      text-align: center; /* Zentriert den Text */
+    }
+    
+    details summary::before {
+      content: none; /* Entfernt das Symbol + */
+    }
+    
+    details[open] summary::before {
+      content: none; /* Entfernt das Symbol - */
+    }
   }
