@@ -656,6 +656,9 @@ h2 { /*Titel: Login*/
 }
 
 /*Ende MyHelvee_Login*/
+
+/*ueber uns*/
+
 .team {
   display: grid; /* Switch to CSS Grid */
   grid-template-columns: 1fr 1fr 1fr; /* Default: Three equal columns */
@@ -689,3 +692,252 @@ h2 { /*Titel: Login*/
   border-top-left-radius: 10rem; /* Top-left rounded corner */
   border-bottom-right-radius: 10rem; /* Bottom-right rounded corner */
 }
+
+/*ueber uns ENDE*/
+
+/* STYLE FOR CONTACT */
+
+.h2_kontakt {       
+  color: var(--olive);
+  padding-top: 2rem; 
+  padding-bottom: 1rem; 
+  padding-left: 2rem;
+}
+
+.form-group input,
+.form-group textarea {
+  background-color: var(--lime); /* Hellgrüner Hintergrund */
+  color: var(--olive);
+  padding: 0.8rem; /* Grösse Zeile */
+  border: 1px solid var(--lime); /* Rahmen */
+  border-radius: 0.5rem;
+  font-size: var(--font-size-body);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  font-family: "Comfortaa", sans-serif;
+  font-size: 1.4rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  background-color: #d9f9c2; /* Beibehalten des Hellgrüns */
+  border-color: var(--olive); /* Fokusrand */
+  outline: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--olive); /* Auch die Platzhalter in olivegrün */
+}
+
+.contact-form {
+  display: grid;
+  gap: 1.5rem; /* Abstand zwischen den Zeilen */
+  margin-top: 2rem; 
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Zwei Spalten */
+  gap: 1rem; /* Abstand zwischen den Spalten */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+}
+
+.primary-button {
+  margin-top: 2rem; /* Abstand nach oben */
+  margin-left: 2rem; /* Abstand nach links */
+}
+
+/* Die häufigsten Fragen und Antworten im Accordion */
+.faq-section {
+  padding: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem; 
+}
+
+a {
+  color: var(--olive); /* Ersetzt Verlinkung im Text Blau durch Grün */
+}
+
+a:hover {
+  color: var(--white); /* Farbe von Schrift bei Hover */
+}
+
+details {
+  margin-bottom: 1rem; /* Abstand unten bei jeder Frage */
+  overflow: hidden; /* legt fest was passiert wenn Inhalt grösser ist als Platz im Container */
+}
+
+details summary {
+  background-color: var(--olive);
+  color: var(--white);
+  padding: 1rem; /* wie gross der Bereich der Frage */
+  transition: background-color 0.3s ease; /* geht länger zum Aufklappen */
+  position: relative; /* Ermöglicht die Positionierung des + / - Symbols */
+  padding-right: 1.5rem; /* Platz für das Symbol */
+  padding-left: 1.5rem; /* wo die Frage anfängt */
+}
+
+details summary::before {
+  content: "+"; /* Standardmäßig ein Plus */
+  font-size: 2rem; /* Größe des Symbols */
+  color: var(--white); /* Farbe des Symbols */
+  position: absolute; /* Positioniert das Symbol */
+  right: 2rem; /* Abstand vom rechten Rand */
+  top: 50%; /* Vertikale Zentrierung */
+  transform: translateY(-50%); /* Korrigiert die Zentrierung */
+}
+
+details[open] summary::before {
+  content: "-"; /* Wenn geöffnet, ein Minus anzeigen */
+  font-size: 2rem; /* Größe des Symbols bleibt gleich */
+  color: var(--lime); /* Farbe des Symbols im geöffneten Zustand */
+}
+
+details summary:hover::before {
+  background-color: var(--olive);
+  color: var(--lime);
+}
+
+details[open] summary {
+  background-color: var(--olive);
+  color: var(--lime);
+}
+
+details summary:hover {
+  background-color: var(--olive);
+  color: var(--lime);
+}
+
+details p {
+  padding: 1rem;
+  padding-left: 1.5rem; 
+  margin: 0;
+  background-color: var(--lime);
+  font-size: var(--font-size-body);
+  color: var(--white);
+  border-bottom-right-radius: 3rem; /* Gleicher Radius wie der Button */
+  border-top-left-radius: 3rem; /* Gleicher Radius wie der Button */
+  box-shadow: 0.2rem 0.2rem 0.5rem var(--gray);
+}
+
+summary {
+  list-style: none; /* Entfernt den Standardmarker */
+  border-top-left-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+  padding: 0.8rem 2rem;
+  background-color: var(--lime); /* Hintergrundfarbe */
+  color: var(--olive); /* Textfarbe */
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0.2rem 0.2rem 0.5rem var(--gray); /* Optional: Schatten hinzufügen */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Für Hover-Effekte */
+}
+
+summary::-webkit-details-marker {
+  display: none; /* Entfernt den Marker in WebKit-Browsern wie Chrome, Safari */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .contact-form {
+    display: flex;
+    flex-direction: column; /* Stapelt die Felder vertikal */
+    gap: 1rem; /* Abstand zwischen den Feldern */
+    padding: 1rem; /* Polsterung innerhalb des Formulars */
+    margin-top: 0.5rem;
+  }
+
+  .faq-section {
+    padding: 1rem;
+    margin-bottom: 2rem;
+    margin-top: -0.5rem; 
+  }
+
+  .form-row {
+    display: flex;
+    flex-direction: column; /* Felder übereinander anordnen */
+    gap: 1rem; /* Abstand zwischen den Feldern */
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%; /* Breite der Eingabefelder auf 100% */
+    font-size: 1rem; /* Kleinere Schriftgröße für Mobilgeräte */
+  }
+
+  .primary-button {
+    align-self: center; /* Button zentrieren */
+    width: 100%; /* Breite des Buttons auf die Felder abstimmen */
+    padding: 0.8rem 1.5rem; /* Optimiertes Padding für kleinere Geräte */
+    display: block; /* Ermöglicht Zentrierung */
+    margin: 1rem auto; /* Zentriert den Button horizontal */
+    padding: 0.5rem 1rem; /* Verkleinert die Innenabstände */
+    max-width: 150px; /* Verkleinert die Breite des Buttons */
+    text-align: center; /* Zentriert den Text */
+  }
+  
+  details summary::before {
+    content: none; /* Entfernt das Symbol + */
+  }
+  
+  details[open] summary::before {
+    content: none; /* Entfernt das Symbol - */
+  }
+}
+/* STYLE FOR CONTACT ENDE */
+
+/* Styling Partner (Aarti) */
+
+/* Styling für die Partner-Green Section */
+.partner-green {
+  background: var(--olive); /* Hintergrundfarbe */
+  padding: 3rem 0; /* Abstand oben und unten */
+}
+
+/* Styling für den Titel innerhalb der Partner-Green Section */
+.partner-green h2 {
+  color: white; /* Schriftfarbe */
+  font-size: 3rem; /* Schriftgröße */
+  padding-left: 2rem;
+  padding-bottom: 1rem;/* ich verstehe nicht warum hier padding 1 rem und nicht grösser damit der abstand gleich ist wie nach oben aber ist einfach so*/
+}
+
+.partner-green .logos {
+  display: flex; /* Flexbox für horizontale Anordnung */
+  justify-content: space-evenly; /* Gleicher Abstand zwischen den Logos */
+  gap: 2rem; /* Abstand zwischen den Bildern */
+}
+
+.partner-green .logos img {
+  max-height: 80px; /* Maximale Höhe */
+  object-fit: contain; /* Logos skalieren ohne Verzerrung */
+  width: auto; /* Breite automatisch */
+}
+
+/* Responsive Layout for Mobile */
+@media (max-width: 768px) {
+  .partner-green h2 {
+      font-size: 2rem; /* Kleinere Schriftgröße für mobile Geräte */
+      padding-left: 1rem; /* Weniger Abstand links */
+      text-align: center; /* Zentrierter Text für Mobilgeräte */
+  }
+
+  .partner-green .logos {
+      flex-wrap: wrap; /* Zeilenumbruch für Logos */
+      justify-content: center; /* Zentriere Logos horizontal */
+      gap: 1rem; /* Reduziere den Abstand zwischen den Logos */
+      padding: 1rem; /* Innenabstand für Mobilgeräte */
+  }
+
+  .partner-green .logos img {
+      max-height: 60px; /* Reduzierte Höhe für Logos auf kleineren Bildschirmen */
+      margin: 0 auto; /* Zentriere die Logos */
+  }
+}
+
+  /* Styling Partner ENDE */
