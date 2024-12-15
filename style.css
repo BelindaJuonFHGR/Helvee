@@ -207,7 +207,7 @@ p {
 .header-section {
   position: relative;
   height: 70vh;
-  background: url("./img/headerBG.png") no-repeat center;
+  background: url("./img/01_Home/02_Header.png") no-repeat center;
   background-size: cover; /* Ensure it covers the area */
   display: flex;
   align-items: center;
@@ -280,6 +280,7 @@ p {
   gap: 2rem; /* Space between rows and columns */
   padding: 2rem; 
   max-width: 100%; /* Prevent section from exceeding body width */
+  max-height: auto;
   overflow: hidden; /* Prevent horizontal overflow */
 }
 
@@ -306,7 +307,13 @@ p {
 .section.green {
   background: var(--olive);
   color: var(--light-gray);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: center; /* Zentriert Inhalte vertikal */
 }
+ 
 
 /* Section-specific styles */
 /* White section */
@@ -391,6 +398,34 @@ p {
   fill: var(--lime); /* Change color on hover */
 }
 
+.responsive-video {
+  width: auto;
+  height: 700px;
+  display: block;
+  margin-left: auto; /* Schiebt das Video nach rechts */
+}
+
+/* Mobile Ansicht fürs Video*/
+@media (max-width: 768px) {
+  .section.green {
+    grid-template-columns: 1fr; /* Ändert das Layout auf eine Spalte */
+  }
+
+  .section.green .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Zentriere Inhalte */
+  }
+
+  .section.green .column:nth-child(1) {
+    order: 1; /* Button und Text zuerst */
+  }
+
+  .section.green .column:nth-child(2) {
+    order: 3; /* Video danach */
+  }
+}
+
 /* Footer Styles */
 .footer {
   background: var(--black);
@@ -428,6 +463,14 @@ p {
   font-style: normal;
 }
 
+address a {
+  text-decoration: none; /* Entfernt Unterstreichung */
+  color: inherit; /* Übernimmt die Farbe vom Eltern-Element */
+}
+
+address a:hover {
+  text-decoration: underline; /* Optional: Unterstreichung beim Hover */
+}
 .social-media-column .social-icons {
   display: flex;
   gap: 1rem;
@@ -444,12 +487,6 @@ p {
   align-items: center;
   justify-content: center;
   font-size: 0.875rem;
-}
-
-.responsive-video {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 
 .footer-bottom {
@@ -478,186 +515,8 @@ p {
 
 
 
-/*myHelvee Login*/
 
-/*ganze Seite Desktop-Ansicht*/
-
-* {
-  box-sizing: border-box;
-}
-
-.page-container {
-  transition: all 0.3s ease-in-out;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 40px;
-  overflow: visible;
-}
-
-/*ganze Seite Mobile Ansicht (unter 768px Breite)*/
-@media (max-width: 768px) {
-  .page-container {
-      flex-direction: column; /* Spaltenlayout */
-      align-items: center; /* Zentriert die Inhalte */
-  }
-
-  .header-section, .container_grau {
-      width: 100%; /* Beide Spalten nehmen die volle Breite ein */
-      max-width: none; /* Entfernt eventuelle maximale Breiten */
-  }
-
-  .container_grau {
-      margin-top: 20px; /* Abstand zwischen den beiden Bereichen */
-  }
-}
-
-
-
-/*linke Section der Seite*/
-.header-section-login {
-position: relative; /* Element bleibt in normalen Dokumentenfluss*/
-transform: translateX(-5vw); /* Verschiebt die Bubble horizontal über linken Rand um 5% des Viewports*/
-height: 80vh; /* Höhe um 80% des Viewports (sichtbarer Bereich des Browsers)*/
-background: url("./img/Login\ Bubble.svg") no-repeat left;
-background-size: contain; /*Bubble wird so gross gemacht wies geht, ohne Container zu überschreiten*/
-background-position: left center;
-align-items: flex-start;
-padding: 0 5vw;
-color: var(--black);
-text-align: left; 
-display: flex;
-flex-direction: column;
-justify-content: center;
-max-width: none;
-}
-
-@media (max-width: 768px) {
-  .header-section-login {
-    width: 100vw; /* Vollständige Breite des Viewports */
-    margin-left: 0; /* Entfernt die negative Verschiebung */
-    padding-left: 7rem; /* Entfernt Polsterungen */
-    background-size: contain; /* Passt das Bild an, ohne abgeschnitten zu werden */
-    background-position: left top; /* Positioniert die Bubble oben links */
-    background-repeat: no-repeat; /* Verhindert, dass das Bild wiederholt wird */
-    justify-content: center;
-    text-align: left;
-    height: auto; /* Adjust height for content */
-    background: var(--light-gray);
-  }
-
-  body {
-    overflow-x: hidden; /* Verhindert horizontales Scrollen */
-  }
-}
-
-.header-content-login {
-max-width: 60%; /* Maximale Breite des Inhalts*/
-z-index: 1; /* Damit der Text immer sichtbar bleibt */
-}
-
-/*Rechte Section der Seite -> gesamter grauer Container*/
-.container_grau{ 
-  background-color: #eeeeee;
-  padding: 40px;
-  border-radius: 25px;
-  max-width: 100%; 
-  width: 100%; /*stellt sicher, dass die Breite dynamisch bleibt*/
-}
-
-
-h2 { /*Titel: Login*/
-  color: #334d26;
-  margin-bottom: 2rem;
-  text-align: left;
-}
-
-.Eingabefeld {
-  width: 100%;
-  height: 4rem;
-  padding: 0.8rem 2rem;
-  border-radius: 35px;
-  margin-bottom: 2rem;
-  background-color: #bfd67f;
-  font-family: "Comfortaa", sans-serif;
-  font-size: 1.4rem;
-  border: none;
-}
-
-.Eingabefeld::-webkit-input-placeholder { /* Placeholder da sonst Schriftfarbe grau ist und webkit für Chrome, Safari */
-  color: #334d26;
-}
-
-.login-form input:focus{
-  outline: none;/*Damit kein blauer Rahmen angezeigt wird beim anklicken*/
-}
-
-.button-login-container { /*weil erste Section, wo zwei Buttons nebeneinander sind*/
-  display: flex;
-  gap: 10px; /*Abstand zwischen den Buttons*/
-}
-
-.button-login {
-  display: inline-block;
-  padding: 0.8rem 2rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  border-top-left-radius: 3rem;
-  border-bottom-right-radius: 3rem;
-  background-color: var(--olive);
-  box-shadow: 0.2rem 0.2rem 0.5rem var(--gray);
-  color: var(--light-gray);
-  text-decoration: none;
-  text-align: center;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-
-.button-login:hover {
-  background-color: var(--lime);
-  color: var(--olive);
-  transform: translateY(-0.2rem);
-}
-
-.checkbox-container { /*Checkbox UND Text: Angemeldet bleiben*/
-  display: flex;
-  align-items: center; /*zentriert Checkbox und Text vertikal*/
-  gap: 8px; /* Abstand zwischen Checkbox und Text */
-  font-size: 16px;
-  line-height: 1;
-}
-
-.checkbox { /*Nur Checkbox Angemeldet bleiben*/
-  appearance: none; /*entfernt Standart Styling*/
-  width: 30px;
-  height: 20px;
-  border: 2px solid var(--olive); /* Rahmenfarbe */
-  border-top-left-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
-  background-color: #fff; /* Hintergrundfarbe */
-  position: relative;
-  cursor: pointer;
-  font-size: 2rem;
-  
-}
-
-.checkbox:checked {
-  background-color: var(--olive); /* Farbe bei Aktivierung */
-}
-
-.checkbox:checked::before {
-  content: '✔';
-  position: absolute; /*Haken wird innerhalb Checkbox frei positioniert*/
-  top: 50%; 
-  left: 50%; /*top und left positionieren die obere linke Ecke des Hakens in die Mitte der Checkbox.*/
-  transform: translate(-50%, -50%); /*der Haken wird in der Mitte der Checkbox positioniert, unabhängig von der Grösse der Checkbox*/
-  font-size: 14px;
-  color: white; /* Hakenfarbe */
-}
-
-/*Ende MyHelvee_Login*/
-
-/*ueber uns*/
+/*ÜBER UNS*/
 
 .team {
   display: grid; /* Switch to CSS Grid */
@@ -693,7 +552,68 @@ h2 { /*Titel: Login*/
   border-bottom-right-radius: 10rem; /* Bottom-right rounded corner */
 }
 
-/*ueber uns ENDE*/
+/*ÜBER UNS ENDE*/
+
+
+
+
+/* STYLE FOR PARTNER */
+
+/* Styling für die Partner-Green Section */
+.partner-green {
+  background: var(--olive); /* Hintergrundfarbe */
+  padding: 2rem 1rem; /* Reduziert das obere, untere und seitliche Padding */
+}
+
+/* Styling für den Titel innerhalb der Partner-Green Section */
+.partner-green h2 {
+  color: rgb(255, 255, 255); /* Schriftfarbe */
+  font-size: 3rem; /* Schriftgröße */
+  padding-left: 2rem;
+  padding-bottom: 1rem;/* ich verstehe nicht warum hier padding 1 rem und nicht grösser damit der abstand gleich ist wie nach oben aber ist einfach so*/
+}
+
+.partner-green .logos {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  gap: 1rem; /* Reduzierter Abstand */
+  overflow-x: auto; /* Scrollen, falls notwendig */
+}
+
+.partner-green .logos img {
+  max-height: 60px; /* Größe der Logos anpassen */
+  width: auto;
+  flex-shrink: 1; /* Verhindert das Abschneiden der Logos */
+  object-fit: contain; /* Kein Verzerren der Logos */
+}
+
+/* Responsive Layout for Mobile */
+@media (max-width: 768px) {
+  .partner-green h2 {
+      font-size: 2rem; /* Kleinere Schriftgröße für mobile Geräte */
+      padding-left: 1rem; /* Weniger Abstand links */
+      text-align: center; /* Zentrierter Text für Mobilgeräte */
+  }
+
+  .partner-green .logos {
+      flex-wrap: wrap; /* Zeilenumbruch für Logos */
+      justify-content: center; /* Zentriere Logos horizontal */
+      gap: 1rem; /* Reduziere den Abstand zwischen den Logos */
+      padding: 1rem; /* Innenabstand für Mobilgeräte */
+  }
+
+  .partner-green .logos img {
+      max-height: 60px; /* Reduzierte Höhe für Logos auf kleineren Bildschirmen */
+      margin: 0 auto; /* Zentriere die Logos */
+  }
+}
+
+  /* STYLE FOR PARTNER ENDE */
+
+
 
 /* STYLE FOR CONTACT */
 
@@ -708,9 +628,9 @@ h2 { /*Titel: Login*/
 .form-group textarea {
   background-color: var(--lime); /* Hellgrüner Hintergrund */
   color: var(--olive);
-  padding: 0.8rem; /* Grösse Zeile */
-  border: 1px solid var(--lime); /* Rahmen */
-  border-radius: 0.5rem;
+  padding: 0.8rem 2rem; /* Grösse Zeile */
+  border: 0;
+  border-radius: 35px;
   font-size: var(--font-size-body);
   transition: border-color 0.3s ease, background-color 0.3s ease;
   font-family: "Comfortaa", sans-serif;
@@ -719,8 +639,6 @@ h2 { /*Titel: Login*/
 
 .form-group input:focus,
 .form-group textarea:focus {
-  background-color: #d9f9c2; /* Beibehalten des Hellgrüns */
-  border-color: var(--olive); /* Fokusrand */
   outline: none;
 }
 
@@ -747,9 +665,25 @@ h2 { /*Titel: Login*/
   padding: 0 2rem;
 }
 
-.primary-button {
-  margin-top: 2rem; /* Abstand nach oben */
-  margin-left: 2rem; /* Abstand nach links */
+.primary-button-kontakt {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  border-top-left-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+  background-color: var(--olive);
+  box-shadow: 0.2rem 0.2rem 0.5rem var(--gray);
+  color: var(--light-gray);
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.primary-button-kontakt:hover {
+  background-color: var(--lime);
+  color: var(--olive);
+  transform: translateY(-0.2rem);
 }
 
 /* Die häufigsten Fragen und Antworten im Accordion */
@@ -891,53 +825,182 @@ summary::-webkit-details-marker {
 }
 /* STYLE FOR CONTACT ENDE */
 
-/* Styling Partner (Aarti) */
 
-/* Styling für die Partner-Green Section */
-.partner-green {
-  background: var(--olive); /* Hintergrundfarbe */
-  padding: 3rem 0; /* Abstand oben und unten */
+
+
+/*STYLE FOR LOGIN*/
+
+/*ganze Seite Desktop-Ansicht*/
+
+* {
+  box-sizing: border-box;
 }
 
-/* Styling für den Titel innerhalb der Partner-Green Section */
-.partner-green h2 {
-  color: white; /* Schriftfarbe */
-  font-size: 3rem; /* Schriftgröße */
-  padding-left: 2rem;
-  padding-bottom: 1rem;/* ich verstehe nicht warum hier padding 1 rem und nicht grösser damit der abstand gleich ist wie nach oben aber ist einfach so*/
+.page-container {
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 40px;
+  overflow: visible;
 }
 
-.partner-green .logos {
-  display: flex; /* Flexbox für horizontale Anordnung */
-  justify-content: space-evenly; /* Gleicher Abstand zwischen den Logos */
-  gap: 2rem; /* Abstand zwischen den Bildern */
-}
-
-.partner-green .logos img {
-  max-height: 80px; /* Maximale Höhe */
-  object-fit: contain; /* Logos skalieren ohne Verzerrung */
-  width: auto; /* Breite automatisch */
-}
-
-/* Responsive Layout for Mobile */
+/*ganze Seite Mobile Ansicht (unter 768px Breite)*/
 @media (max-width: 768px) {
-  .partner-green h2 {
-      font-size: 2rem; /* Kleinere Schriftgröße für mobile Geräte */
-      padding-left: 1rem; /* Weniger Abstand links */
-      text-align: center; /* Zentrierter Text für Mobilgeräte */
+  .page-container {
+      flex-direction: column; /* Spaltenlayout */
+      align-items: center; /* Zentriert die Inhalte */
   }
 
-  .partner-green .logos {
-      flex-wrap: wrap; /* Zeilenumbruch für Logos */
-      justify-content: center; /* Zentriere Logos horizontal */
-      gap: 1rem; /* Reduziere den Abstand zwischen den Logos */
-      padding: 1rem; /* Innenabstand für Mobilgeräte */
+  .header-section, .container_grau {
+      width: 100%; /* Beide Spalten nehmen die volle Breite ein */
+      max-width: none; /* Entfernt eventuelle maximale Breiten */
   }
 
-  .partner-green .logos img {
-      max-height: 60px; /* Reduzierte Höhe für Logos auf kleineren Bildschirmen */
-      margin: 0 auto; /* Zentriere die Logos */
+  .container_grau {
+      margin-top: 20px; /* Abstand zwischen den beiden Bereichen */
   }
 }
 
-  /* Styling Partner ENDE */
+/*linke Section der Seite*/
+.header-section-login {
+position: relative; /* Element bleibt in normalen Dokumentenfluss*/
+transform: translateX(-5vw); /* Verschiebt die Bubble horizontal über linken Rand um 5% des Viewports*/
+height: 80vh; /* Höhe um 80% des Viewports (sichtbarer Bereich des Browsers)*/
+background: url("img/05_Login/Login\ Bubble.svg") no-repeat left;
+background-size: contain; /*Bubble wird so gross gemacht wies geht, ohne Container zu überschreiten*/
+background-position: left center;
+align-items: flex-start;
+padding: 0 5vw;
+color: var(--black);
+text-align: left; 
+display: flex;
+flex-direction: column;
+justify-content: center;
+max-width: none;
+}
+
+@media (max-width: 768px) {
+  .header-section-login {
+    width: 100vw; /* Vollständige Breite des Viewports */
+    margin-left: 0; /* Entfernt die negative Verschiebung */
+    padding-left: 7rem; /* Entfernt Polsterungen */
+    background-size: contain; /* Passt das Bild an, ohne abgeschnitten zu werden */
+    background-position: left top; /* Positioniert die Bubble oben links */
+    background-repeat: no-repeat; /* Verhindert, dass das Bild wiederholt wird */
+    justify-content: center;
+    text-align: left;
+    height: auto; /* Adjust height for content */
+    background: var(--light-gray);
+  }
+
+  body {
+    overflow-x: hidden; /* Verhindert horizontales Scrollen */
+  }
+}
+
+.header-content-login {
+max-width: 60%; /* Maximale Breite des Inhalts*/
+z-index: 1; /* Damit der Text immer sichtbar bleibt */
+}
+
+/*Rechte Section der Seite -> gesamter grauer Container*/
+.container_grau{ 
+  background-color: #eeeeee;
+  padding: 40px;
+  border-radius: 25px;
+  max-width: 100%; 
+  width: 100%; /*stellt sicher, dass die Breite dynamisch bleibt*/
+}
+
+
+h2 { /*Titel: Login*/
+  color: #334d26;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.Eingabefeld {
+  width: 100%;
+  height: 4rem;
+  padding: 0.8rem 2rem;
+  border-radius: 35px;
+  margin-bottom: 2rem;
+  background-color: #bfd67f;
+  font-family: "Comfortaa", sans-serif;
+  font-size: 1.4rem;
+  border: none;
+}
+
+.Eingabefeld::-webkit-input-placeholder { /* Placeholder da sonst Schriftfarbe grau ist und webkit für Chrome, Safari */
+  color: #334d26;
+}
+
+.login-form input:focus{
+  outline: none;/*Damit kein blauer Rahmen angezeigt wird beim anklicken*/
+}
+
+.button-login-container { /*weil erste Section, wo zwei Buttons nebeneinander sind*/
+  display: flex;
+  gap: 10px; /*Abstand zwischen den Buttons*/
+}
+
+.button-login {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-top-left-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+  background-color: var(--olive);
+  box-shadow: 0.2rem 0.2rem 0.5rem var(--gray);
+  color: var(--light-gray);
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
+.button-login:hover {
+  background-color: var(--lime);
+  color: var(--olive);
+  transform: translateY(-0.2rem);
+}
+
+.checkbox-container { /*Checkbox UND Text: Angemeldet bleiben*/
+  display: flex;
+  align-items: center; /*zentriert Checkbox und Text vertikal*/
+  gap: 8px; /* Abstand zwischen Checkbox und Text */
+  font-size: 16px;
+  line-height: 1;
+}
+
+.checkbox { /*Nur Checkbox Angemeldet bleiben*/
+  appearance: none; /*entfernt Standart Styling*/
+  width: 30px;
+  height: 20px;
+  border: 2px solid var(--olive); /* Rahmenfarbe */
+  border-top-left-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+  background-color: #fff; /* Hintergrundfarbe */
+  position: relative;
+  cursor: pointer;
+  font-size: 2rem;
+  
+}
+
+.checkbox:checked {
+  background-color: var(--olive); /* Farbe bei Aktivierung */
+}
+
+.checkbox:checked::before {
+  content: '✔';
+  position: absolute; /*Haken wird innerhalb Checkbox frei positioniert*/
+  top: 50%; 
+  left: 50%; /*top und left positionieren die obere linke Ecke des Hakens in die Mitte der Checkbox.*/
+  transform: translate(-50%, -50%); /*der Haken wird in der Mitte der Checkbox positioniert, unabhängig von der Grösse der Checkbox*/
+  font-size: 14px;
+  color: white; /* Hakenfarbe */
+}
+
+/*STYLE FOR LOGIN ENDE*/
