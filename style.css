@@ -561,34 +561,36 @@ address a:hover {
 
 /* Styling für die Partner-Green Section */
 .partner-green {
-  background: var(--olive); /* Hintergrundfarbe */
-  padding: 2rem 1rem; /* Reduziert das obere, untere und seitliche Padding */
+  background: var(--olive);
+  color: var(--light-gray);
+  padding: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  text-align: left;
+  overflow: hidden;
 }
 
-/* Styling für den Titel innerhalb der Partner-Green Section */
-.partner-green h2 {
-  color: rgb(255, 255, 255); /* Schriftfarbe */
-  font-size: 3rem; /* Schriftgröße */
-  padding-left: 2rem;
-  padding-bottom: 1rem;/* ich verstehe nicht warum hier padding 1 rem und nicht grösser damit der abstand gleich ist wie nach oben aber ist einfach so*/
+.partner-green h2{
+  color: var(--white);
 }
 
 .partner-green .logos {
   display: flex;
-  flex-wrap: nowrap;
   justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
-  gap: 1rem; /* Reduzierter Abstand */
-  overflow-x: auto; /* Scrollen, falls notwendig */
+  align-items: left;
+  gap: 4em;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
 }
 
 .partner-green .logos img {
-  max-height: 60px; /* Größe der Logos anpassen */
+  max-height: 100px;
   width: auto;
-  flex-shrink: 1; /* Verhindert das Abschneiden der Logos */
-  object-fit: contain; /* Kein Verzerren der Logos */
+  object-fit: contain;
+  max-width: 100%;
 }
+
 
 /* Responsive Layout for Mobile */
 @media (max-width: 768px) {
@@ -610,7 +612,6 @@ address a:hover {
       margin: 0 auto; /* Zentriere die Logos */
   }
 }
-
   /* STYLE FOR PARTNER ENDE */
 
 
